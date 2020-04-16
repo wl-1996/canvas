@@ -11,6 +11,12 @@
 <!--这里面的宽高是html的属性，不是css属性-->
 <canvas id="canvas" width="100" height="100"></canvas>
 <script>
+    // 阻止微信浏览器默认向下滚动：
+    // 同时惊喜的我发现也可以解决QQ浏览器页面滑动问题：
+    document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, {passive: false});
+
     let canvas = document.getElementById("canvas");
     //将canvas的宽高设置为整个文档的宽高：
     //为什么不用document.body.clientWidth？
